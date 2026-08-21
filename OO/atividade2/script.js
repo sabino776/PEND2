@@ -36,12 +36,30 @@ class Produto {
     }
 }
 
-
 const produtos = [];
 
 const formulario = document.getElementById("formProduto");
 const resultado = document.getElementById("resultado");
 
+const produtosSalvos = JSON.parse(localStorage.getItem("produtos"));
+
+if (produtosSalvos) {
+
+    produtosSalvos.forEach(function(produto) {
+
+        produtos.push(
+            new Produto(
+                produto.nome,
+                produto.preco,
+                produto.categoria,
+                produto.desconto
+            )
+        );
+
+    });
+
+    mostrarProdutos();
+}
 
 formulario.addEventListener("submit", function(event) {
 
@@ -67,28 +85,39 @@ formulario.addEventListener("submit", function(event) {
         desconto
     );
 
-
     produtos.push(produto);
+
+    localStorage.setItem(
+        "produtos",
+        JSON.stringify(produtos)
+    );
+
 
     mostrarProdutos();
 
     formulario.reset();
 });
 
-
 function mostrarProdutos() {
 
     resultado.innerHTML = "";
 
     produtos.forEach(function(produto, indice) {
+
         resultado.innerHTML += produto.exibir(indice);
+
     });
 }
-
 
 function excluirProduto(indice) {
 
     produtos.splice(indice, 1);
+
+    localStorage.setItem(
+        "produtos",
+        JSON.stringify(produtos)
+    );
+
 
     mostrarProdutos();
 }

@@ -59,6 +59,7 @@ formulario.addEventListener("submit", function(event) {
         document.getElementById("desconto").value
     );
 
+    
 
     const produto = new Produto(
         nome,
@@ -70,7 +71,25 @@ formulario.addEventListener("submit", function(event) {
 
     resultado.innerHTML = produto.exibir();
 
+    localStorage.setItem("produto", JSON.stringify(produto));
+
 
     formulario.reset();
 
 });
+
+const dados = localStorage.getItem("produto");
+
+if (dados) {
+
+    const produtoSalvo = JSON.parse(dados);
+
+    const produto = new Produto(
+        produtoSalvo.nome,
+        produtoSalvo.preco,
+        produtoSalvo.categoria,
+        produtoSalvo.desconto
+    );
+
+    resultado.innerHTML = produto.exibir();
+}
