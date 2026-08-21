@@ -11,7 +11,7 @@ class Produto {
         return this.preco - (this.preco * this.desconto / 100);
     }
 
-    exibir() {
+    exibir(indice) {
 
         let precoComDesconto = this.aplicarDesconto();
 
@@ -27,6 +27,10 @@ class Produto {
 
                 <p><strong>Desconto:</strong> 
                 ${this.desconto}%</p>
+
+                <button onclick="excluirProduto(${indice})">
+                    Excluir
+                </button>
             </div>
         `;
     }
@@ -66,13 +70,25 @@ formulario.addEventListener("submit", function(event) {
 
     produtos.push(produto);
 
-
-    resultado.innerHTML = "";
-
-    produtos.forEach(function(produto) {
-        resultado.innerHTML += produto.exibir();
-    });
-
+    mostrarProdutos();
 
     formulario.reset();
 });
+
+
+function mostrarProdutos() {
+
+    resultado.innerHTML = "";
+
+    produtos.forEach(function(produto, indice) {
+        resultado.innerHTML += produto.exibir(indice);
+    });
+}
+
+
+function excluirProduto(indice) {
+
+    produtos.splice(indice, 1);
+
+    mostrarProdutos();
+}

@@ -54,3 +54,15 @@ button:hover {
 .produto h2 {
     color: #a855f7;
 }
+.produto button {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.produto button:hover {
+    background-color: #b91c1c;
+}
