@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo de Chute ao Gol</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>⚽ CHUTE AO GOL</h1>
+
+        <div class="placar">
+
+            <div>
+                <span>PONTOS</span>
+                <strong id="pontos">0</strong>
+            </div>
+
+            <div>
+                <span>CHUTES</span>
+                <strong id="chutes">0</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <p id="mensagem">
+            Arraste a bola e chute para o gol!
+        </p>
+
+
+        <div class="campo">
+
+            <div class="grama">
+
+                <!-- GOL -->
+
+                <div id="gol">
+
+                    <div class="rede"></div>
+
+                    <div class="zona zona-cima">
+                        30
+                    </div>
+
+                    <div class="zona zona-meio">
+                        20
+                    </div>
+
+                    <div class="zona zona-baixo">
+                        10
+                    </div>
+
+                </div>
+
+
+                <!-- LINHA DA ÁREA -->
+
+                <div class="area"></div>
+
+
+                <!-- BOLA -->
+
+                <div class="area-bola">
+
+                    <div
+                        id="bola"
+                        draggable="true"
+                    >
+                        ⚽
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="atividade.js"></script>
+
+</body>
+
+</html>
+

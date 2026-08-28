@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            #111827,
+            #020617
+        );
+
+    color: white;
+
+    text-align: center;
+
+    overflow-x: hidden;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    padding: 25px;
+
+    background: #0b0f19;
+
+    border-bottom: 2px solid #263244;
+}
+
+
+h1 {
+    font-size: 34px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+/* PLACAR */
+
+.placar {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+
+.placar div {
+    min-width: 140px;
+
+    padding: 10px 25px;
+
+    background: #111827;
+
+    border: 1px solid #374151;
+
+    border-radius: 10px;
+}
+
+
+.placar span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    letter-spacing: 2px;
+}
+
+
+.placar strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 30px;
+
+    color: #facc15;
+}
+
+
+/* MENSAGEM */
+
+#mensagem {
+    margin: 25px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #e5e7eb;
+}
+
+
+/* CAMPO */
+
+.campo {
+    width: 900px;
+
+    max-width: 90%;
+
+    height: 560px;
+
+    margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.7);
+}
+
+
+.grama {
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #15803d 0px,
+            #15803d 80px,
+            #166534 80px,
+            #166534 160px
+        );
+}
+
+
+/* LINHAS DO CAMPO */
+
+.grama::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border: 3px solid rgba(255,255,255,0.7);
+
+    border-radius: 10px;
+}
+
+
+/* GOL */
+
+#gol {
+    position: absolute;
+
+    width: 560px;
+
+    height: 260px;
+
+    left: 50%;
+
+    top: 35px;
+
+    transform: translateX(-50%);
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.35) 0px,
+            rgba(255,255,255,0.35) 2px,
+            transparent 2px,
+            transparent 12px
+        );
+
+    border: 10px solid white;
+
+    border-bottom: 15px solid white;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.5);
+
+    z-index: 5;
+}
+
+
+/* TRAVESSÃO */
+
+#gol::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 10px;
+
+    left: 0;
+
+    top: 50%;
+
+    background: rgba(255,255,255,0.7);
+}
+
+
+/* ZONAS DE PONTOS */
+
+.zona {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: rgba(255,255,255,0.5);
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+.zona-cima {
+    width: 100%;
+
+    height: 50%;
+
+    top: 0;
+}
+
+
+.zona-meio {
+    width: 100%;
+
+    height: 50%;
+
+    top: 25%;
+
+    color: rgba(255,255,255,0.35);
+}
+
+
+.zona-baixo {
+    width: 100%;
+
+    height: 50%;
+
+    bottom: 0;
+}
+
+
+/* ÁREA */
+
+.area {
+    position: absolute;
+
+    width: 700px;
+
+    height: 300px;
+
+    left: 50%;
+
+    bottom: -150px;
+
+    transform: translateX(-50%);
+
+    border: 3px solid rgba(255,255,255,0.6);
+
+    border-radius: 50% 50% 0 0;
+}
+
+
+/* BOLA */
+
+.area-bola {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 45px;
+
+    transform: translateX(-50%);
+}
+
+
+#bola {
+    font-size: 65px;
+
+    cursor: grab;
+
+    user-select: none;
+
+    transition: transform 0.2s;
+}
+
+
+#bola:hover {
+    transform: scale(1.1);
+}
+
+
+#bola:active {
+    cursor: grabbing;
+
+    transform: scale(1.2);
+}
+
+
+/* GOL DESTACADO */
+
+.gol-destacado {
+    animation: gol 0.6s;
+}
+
+
+@keyframes gol {
+
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.05);
+
+        box-shadow:
+            0 0 40px #facc15;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+
+    .campo {
+        height: 450px;
+    }
+
+
+    #gol {
+        width: 90%;
+
+        height: 200px;
+    }
+
+
+    .area {
+        width: 90%;
+    }
+
+
+    #bola {
+        font-size: 50px;
+    }
+
+}
+
