@@ -128,12 +128,34 @@
                     playsinline>
                 </video>
 
-                <div class="camera-mensagem" id="cameraMensagem">
+                <div
+                    class="camera-mensagem"
+                    id="cameraMensagem">
+
                     <span>📷</span>
-                    <p>A câmera está desativada</p>
+
+                    <p>
+                        A câmera está desativada
+                    </p>
+
                 </div>
 
             </div>
+
+
+            <!-- BOTÃO PARA TIRAR FOTO -->
+            <button id="btnFoto">
+                📸 Tirar foto
+            </button>
+
+
+            <!-- LOCAL ONDE A FOTO APARECE -->
+            <canvas id="fotoCanvas"></canvas>
+
+
+            <p id="statusFoto" class="status">
+                Nenhuma foto tirada.
+            </p>
 
 
             <p id="statusCamera" class="status">
@@ -143,26 +165,10 @@
         </section>
 
 
-        <!-- INFORMAÇÕES -->
-        <section class="informacao">
-
-            <h3>Sobre o registro</h3>
-
-            <p>
-                Este sistema utiliza as Web APIs de
-                <strong>Geolocation</strong> e
-                <strong>Camera</strong> para registrar
-                informações durante uma visita técnica.
-            </p>
-
         </section>
 
 
         <footer>
-
-            <p>
-                Atividade Prática - Desenvolvimento de Sistemas
-            </p>
 
         </footer>
 
