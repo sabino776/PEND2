@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokédex - PokéAPI</title>
+
+    <link rel="stylesheet" href="atividade.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <span class="pokeball">◓</span>
+            <h1>Pokédex</h1>
+            <p>Consulte informações sobre seus Pokémon favoritos</p>
+        </header>
+
+        <section class="search-box">
+
+            <input
+                type="text"
+                id="pokemonInput"
+                placeholder="Digite o nome ou número do Pokémon"
+                autocomplete="off"
+            >
+
+            <button id="searchButton">
+                 Buscar Pokémon
+            </button>
+
+        </section>
+
+        <p id="status" class="status"></p>
+
+        <section id="pokemonCard" class="pokemon-card hidden">
+
+            <div class="pokemon-header">
+
+                <div>
+                    <span id="pokemonNumber" class="pokemon-number">
+                        #000
+                    </span>
+
+                    <h2 id="pokemonName">
+                        Pokémon
+                    </h2>
+                </div>
+
+                <div id="pokemonTypes" class="types"></div>
+
+            </div>
+
+            <div class="pokemon-content">
+
+                <div class="image-container">
+                    <img
+                        id="pokemonImage"
+                        src=""
+                        alt="Imagem do Pokémon"
+                    >
+                </div>
+
+                <div class="pokemon-info">
+
+                    <div class="info-item">
+                        <span>⚖️ Peso</span>
+                        <strong id="pokemonWeight">-</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>📏 Altura</span>
+                        <strong id="pokemonHeight">-</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>✨ Experiência</span>
+                        <strong id="pokemonXP">-</strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>🧬 Habilidades</span>
+                        <strong id="pokemonAbilities">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stats">
+
+                <h3>Estatísticas</h3>
+
+                <div class="stat">
+                    <div class="stat-info">
+                        <span>HP</span>
+                        <strong id="hpValue">0</strong>
+                    </div>
+
+                    <div class="stat-bar">
+                        <div id="hpBar" class="stat-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-info">
+                        <span>Ataque</span>
+                        <strong id="attackValue">0</strong>
+                    </div>
+
+                    <div class="stat-bar">
+                        <div id="attackBar" class="stat-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-info">
+                        <span>Defesa</span>
+                        <strong id="defenseValue">0</strong>
+                    </div>
+
+                    <div class="stat-bar">
+                        <div id="defenseBar" class="stat-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-info">
+                        <span>Ataque Especial</span>
+                        <strong id="specialAttackValue">0</strong>
+                    </div>
+
+                    <div class="stat-bar">
+                        <div id="specialAttackBar" class="stat-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-info">
+                        <span>Defesa Especial</span>
+                        <strong id="specialDefenseValue">0</strong>
+                    </div>
+
+                    <div class="stat-bar">
+                        <div id="specialDefenseBar" class="stat-fill"></div>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-info">
+                        <span>Velocidade</span>
+                        <strong id="speedValue">0</strong>
+                    </div>
+
+                    <div class="stat-bar">
+                        <div id="speedBar" class="stat-fill"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>
+                Dados fornecidos pela
+                <a
+                    href="https://pokeapi.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    PokéAPI
+                </a>
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="atividade.js"></script>
+
+</body>
+</html>
+
