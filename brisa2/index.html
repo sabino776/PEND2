@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Evestos — encontre shows, festas, festivais, eventos culturais, esportivos e muito mais em um só lugar.">
+
+  <title>Evestos | Todos os eventos em um só lugar</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="img/evestos.png">
+
+  <link
+    rel="stylesheet"
+    href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       CABEÇALHO
+  ====================================================== -->
+
+  <header class="header">
+
+    <a
+      href="#inicio"
+      class="logo-link">
+
+      <img
+        src="img/logo.png"
+        alt="Logo Evestos"
+        class="logo">
+
+    </a>
+
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Abrir menu">
+
+      ☰
+
+    </button>
+
+
+    <nav id="navMenu">
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a href="#evento">
+        Destaque
+      </a>
+
+      <a href="#eventos">
+        Eventos
+      </a>
+
+      <a href="#localizacao">
+        Localização
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO / INÍCIO
+    ====================================================== -->
+
+    <section
+      class="hero"
+      id="inicio">
+
+      <div class="hero-content">
+
+
+        <span class="tag">
+          SHOWS • FESTAS • FESTIVAIS • CULTURA • ESPORTES
+        </span>
+
+
+        <h1>
+          ENCONTRE SEU
+          <span>EVENTO</span>
+        </h1>
+
+
+        <p>
+          Descubra os melhores eventos perto de você.
+          Shows, festas, festivais, teatro, esportes,
+          cultura, palestras e muito mais em um só lugar.
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+          <a
+            href="#eventos"
+            class="btn">
+
+            Explorar eventos
+
+          </a>
+
+
+          <button
+            class="btn btn-outline"
+            id="locationBtn">
+
+            📍 Ver eventos perto de mim
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EVENTO EM DESTAQUE
+    ====================================================== -->
+
+    <section
+      class="section featured"
+      id="evento">
+
+
+      <div class="section-title">
+
+
+        <span>
+          EM DESTAQUE
+        </span>
+
+
+        <h2>
+          Eventos que podem interessar você
+        </h2>
+
+
+      </div>
+
+
+
+      <div class="event-card featured-card">
+
+
+        <img
+          src="img/evestos.png"
+          alt="Evestos - Eventos em destaque">
+
+
+        <div class="event-info">
+
+
+          <p class="date">
+            EVENTOS EM DESTAQUE
+          </p>
+
+
+          <h3>
+            Encontre experiências incríveis
+          </h3>
+
+
+          <p>
+            Explore eventos de diferentes categorias,
+            cidades e estilos. Encontre algo para fazer
+            perto de você.
+          </p>
+
+
+          <div
+            class="countdown"
+            id="countdown">
+
+            Confira a agenda de eventos
+
+          </div>
+
+
+          <a
+            href="#eventos"
+            class="btn">
+
+            Ver eventos
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EVENTOS
+    ====================================================== -->
+
+    <section
+      class="section"
+      id="eventos">
+
+
+      <div class="section-title">
+
+
+        <span>
+          AGENDA
+        </span>
+
+
+        <h2>
+          Eventos
+        </h2>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           PESQUISA
+      ================================================== -->
+
+      <div class="event-search">
+
+
+        <input
+          type="search"
+          id="eventSearch"
+          placeholder="🔎 Pesquisar evento, cidade, local ou categoria..."
+          aria-label="Pesquisar eventos">
+
+
+        <button
+          class="clear-search"
+          id="clearSearch"
+          type="button">
+
+          Limpar
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           FILTROS
+      ================================================== -->
+
+      <div class="filters">
+
+
+        <button
+          class="filter active"
+          data-filter="todos">
+
+          Todos
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="music">
+
+          🎵 Música
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="festival">
+
+          🎪 Festivais
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="party">
+
+          🎉 Festas
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="sports">
+
+          ⚽ Esportes
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="culture">
+
+          🎭 Cultura
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="theater">
+
+          🎬 Teatro
+
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="other">
+
+          📅 Outros
+
+        </button>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           STATUS DA PESQUISA
+      ================================================== -->
+
+      <p
+        class="search-status"
+        id="searchStatus">
+
+        Carregando eventos...
+
+      </p>
+
+
+
+      <!-- =================================================
+           EVENTOS DA API
+      ================================================== -->
+
+      <div
+        class="events-grid"
+        id="eventsGrid">
+
+
+        <div class="no-results">
+
+
+          <div>
+            📅
+          </div>
+
+
+          <h3>
+            Carregando eventos...
+          </h3>
+
+
+          <p>
+            Buscando eventos em várias cidades
+            do Brasil.
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOCALIZAÇÃO E CLIMA
+    ====================================================== -->
+
+    <section
+      class="section api-section"
+      id="localizacao">
+
+
+      <div class="section-title">
+
+
+        <span>
+          PERTO DE VOCÊ
+        </span>
+
+
+        <h2>
+          Descubra eventos na sua região
+        </h2>
+
+
+      </div>
+
+
+
+      <div class="api-card">
+
+
+        <div>
+
+
+          <h3 id="weatherTitle">
+            Descubra o clima perto de você
+          </h3>
+
+
+          <p id="weatherText">
+
+            Permita sua localização para descobrir
+            sua região e consultar o clima atual.
+
+          </p>
+
+
+        </div>
+
+
+
+        <div
+          class="weather-value"
+          id="weatherValue">
+
+          📍
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       MODAL DE DETALHES
+  ====================================================== -->
+
+  <div
+    class="modal hidden"
+    id="modal">
+
+
+    <div class="modal-box">
+
+
+      <button
+        class="close"
+        id="closeModal"
+        aria-label="Fechar">
+
+        ×
+
+      </button>
+
+
+      <h2 id="modalTitle">
+        Evento
+      </h2>
+
+
+      <p id="modalText">
+        Informações do evento.
+      </p>
+
+
+      <button
+        class="btn"
+        id="modalAction">
+
+        Fechar
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       RODAPÉ
+  ====================================================== -->
+
+  <footer>
+
+
+    <img
+      src="img/evestos.png"
+      alt="Logo Evestos"
+      class="footer-logo">
+
+
+    <p>
+      © 2026 Evestos —
+      Todos os eventos em um só lugar.
+    </p>
+
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
