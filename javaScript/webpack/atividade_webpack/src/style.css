@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    overflow: hidden;
+}
+
+/* Efeito de brilho no fundo */
+body::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #8a2be2;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.5;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #00c6ff;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.4;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Card principal */
+#mensagem {
+    position: relative;
+    z-index: 1;
+    padding: 50px 70px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(138, 43, 226, 0.3);
+
+    font-size: 42px;
+    text-align: center;
+
+    animation: aparecer 1s ease;
+}
+
+/* Brilho no texto */
+#mensagem {
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #8a2be2,
+        0 0 40px #8a2be2;
+}
+
+/* Animação */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Efeito quando passa o mouse */
+#mensagem:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(138, 43, 226, 0.7);
+
+    transition: 0.4s;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+
+    #mensagem {
+        width: 90%;
+        padding: 35px 20px;
+        font-size: 28px;
+    }
+}
