@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo demonstrativo de bebidas para maiores de 18 anos.">
+  <title>Sabi Spirits | Bebidas & Destilados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Aviso de maioridade: demonstração visual, não é verificação legal de idade -->
+  <div class="age-overlay" id="ageOverlay" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-box">
+      <div class="brand-mark">S</div>
+      <p class="eyebrow">SABI SPIRITS</p>
+      <h2 id="ageTitle">Você tem 18 anos ou mais?</h2>
+      <p>Este site apresenta bebidas alcoólicas. Beba com responsabilidade.</p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <button class="btn btn-gold" id="confirmAge">Sim, tenho 18+</button>
+        <button class="btn btn-outline-light" id="denyAge">Não tenho 18</button>
+      </div>
+      <small>Venda e consumo de bebidas alcoólicas são proibidos para menores de 18 anos no Brasil.</small>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav">
+    <div class="container">
+      <a class="navbar-brand brand" href="#inicio">SABI <span>SPIRITS</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="btn btn-gold btn-sm px-3" href="#produtos">Ver catálogo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active hero-slide slide-one">
+          <div class="hero-shade"></div>
+          <div class="container hero-content">
+            <p class="eyebrow">SELEÇÃO ESPECIAL</p>
+            <h1>Seu próximo brinde<br><em>começa aqui.</em></h1>
+            <p class="hero-copy">Whiskies, vodkas, gins e destilados selecionados para momentos especiais.</p>
+            <a href="#produtos" class="btn btn-gold btn-lg">Explorar produtos <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="carousel-item hero-slide slide-two">
+          <div class="hero-shade"></div>
+          <div class="container hero-content">
+            <p class="eyebrow">CLÁSSICOS E NOVIDADES</p>
+            <h1>Uma coleção<br><em>para apreciar.</em></h1>
+            <p class="hero-copy">Conheça opções para montar sua adega com estilo.</p>
+            <a href="#produtos" class="btn btn-gold btn-lg">Ver catálogo <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="carousel-item hero-slide slide-three">
+          <div class="hero-shade"></div>
+          <div class="container hero-content">
+            <p class="eyebrow">CONSUMO CONSCIENTE</p>
+            <h1>Qualidade em cada<br><em>detalhe.</em></h1>
+            <p class="hero-copy">Escolha com responsabilidade. Se beber, não dirija.</p>
+            <a href="#sobre" class="btn btn-gold btn-lg">Conheça a Sabi Spirits</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Slide anterior"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Próximo slide"><span class="carousel-control-next-icon"></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="produtos" class="section-pad">
+      <div class="container">
+        <div class="section-heading text-center">
+          <p class="eyebrow">NOSSA SELEÇÃO</p>
+          <h2>Encontre sua próxima escolha</h2>
+          <p>Explore categorias e conheça os destaques do catálogo.</p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="filters">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="whisky">Whisky</button>
+          <button class="filter-btn" data-filter="vodka">Vodka</button>
+          <button class="filter-btn" data-filter="gin">Gin</button>
+          <button class="filter-btn" data-filter="destilado">Destilados</button>
+        </div>
+        <div class="row g-4" id="productGrid">
+          <div class="col-12 col-sm-6 col-lg-4 product-item" data-category="whisky">
+            <article class="product-card h-100">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=900&q=85" alt="Garrafa de whisky em ambiente elegante" loading="lazy"><span class="product-tag">Clássico</span></div>
+              <div class="product-info"><p class="product-category">WHISKY</p><h3>Oak Reserve</h3><p class="product-desc">Perfil amadeirado e notas de baunilha.</p><div class="product-bottom"><strong>R$ 189,90</strong><button class="btn btn-outline-gold btn-sm buy-btn" data-product="Oak Reserve">Tenho interesse</button></div></div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 product-item" data-category="vodka">
+            <article class="product-card h-100">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=900&q=85" alt="Bebidas em garrafas sobre balcão" loading="lazy"><span class="product-tag">Destaque</span></div>
+              <div class="product-info"><p class="product-category">VODKA</p><h3>Crystal Clear</h3><p class="product-desc">Uma opção versátil para diferentes receitas.</p><div class="product-bottom"><strong>R$ 79,90</strong><button class="btn btn-outline-gold btn-sm buy-btn" data-product="Crystal Clear">Tenho interesse</button></div></div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 product-item" data-category="gin">
+            <article class="product-card h-100">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=900&q=85" alt="Garrafa e copo para drink" loading="lazy"><span class="product-tag">Botânicos</span></div>
+              <div class="product-info"><p class="product-category">GIN</p><h3>Botanical Dry</h3><p class="product-desc">Aromas cítricos e toque herbal.</p><div class="product-bottom"><strong>R$ 119,90</strong><button class="btn btn-outline-gold btn-sm buy-btn" data-product="Botanical Dry">Tenho interesse</button></div></div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 product-item" data-category="destilado">
+            <article class="product-card h-100">
+              <div class="product-image"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=85" alt="Coquetel servido em copo" loading="lazy"></div>
+              <div class="product-info"><p class="product-category">DESTILADO</p><h3>Amber Spirit</h3><p class="product-desc">Uma escolha marcante para apreciar com moderação.</p><div class="product-bottom"><strong>R$ 99,90</strong><button class="btn btn-outline-gold btn-sm buy-btn" data-product="Amber Spirit">Tenho interesse</button></div></div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 product-item" data-category="whisky">
+            <article class="product-card h-100">
+              <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN76UOwVl_5LMC88zL1gRkjDGR2mp__y8Yp-aNSNcyA&s=10" alt="Garrafa de bebida em fundo escuro" loading="lazy"></div>
+              <div class="product-info"><p class="product-category">WHISKY</p><h3>Golden Barrel</h3><p class="product-desc">Notas quentes e acabamento suave.</p><div class="product-bottom"><strong>R$ 229,90</strong><button class="btn btn-outline-gold btn-sm buy-btn" data-product="Golden Barrel">Tenho interesse</button></div></div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 product-item" data-category="gin">
+            <article class="product-card h-100">
+              <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsgUnQU0EsI281VodTSn6q0EzP_HwNV1TSNoH5DDFrmA&s=10" alt="Ingredientes cítricos para preparar drinks" loading="lazy"></div>
+              <div class="product-info"><p class="product-category">GIN</p><h3>Citrus Garden</h3><p class="product-desc">Inspirado em aromas frescos e cítricos.</p><div class="product-bottom"><strong>R$ 139,90</strong><button class="btn btn-outline-gold btn-sm buy-btn" data-product="Citrus Garden">Tenho interesse</button></div></div>
+            </article>
+          </div>
+        </div>
+        <p class="catalog-note text-center mt-4">Preços e produtos ilustrativos para fins de demonstração acadêmica. Consulte disponibilidade e informações do fabricante.</p>
+      </div>
+    </section>
+
+    <section id="sobre" class="about-section section-pad">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6"><div class="about-photo" role="img" aria-label="Ambiente sofisticado de bar"></div></div>
+          <div class="col-lg-6">
+            <p class="eyebrow">SOBRE A SABI SPIRITS</p>
+            <h2>Uma seleção feita para quem valoriza os detalhes.</h2>
+            <p class="about-text">A Sabi Spirits é uma marca fictícia criada para apresentar um catálogo moderno de bebidas. Aqui você encontra uma vitrine organizada por categorias, com informações simples e navegação fácil.</p>
+            <div class="responsible-box"><strong>Consumo responsável</strong><p class="mb-0">Venda e consumo proibidos para menores de 18 anos. Se beber, não dirija. Aprecie com moderação.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section-pad contact-section">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <p class="eyebrow">FALE CONOSCO</p>
+            <h2>Vamos conversar?</h2>
+            <p>Preencha o formulário para enviar uma dúvida ou demonstrar interesse em algum item do catálogo.</p>
+            <p class="contact-detail"><span>✉</span> contato@contato.sabispirits.example</p>
+            <p class="contact-detail"><span>⌖</span> Mococa — SP</p>
+          </div>
+          <div class="col-lg-7">
+            <form id="contactForm" class="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6"><label for="name" class="form-label">Nome</label><input type="text" class="form-control" id="name" name="name" placeholder="Seu nome" required></div>
+                <div class="col-md-6"><label for="email" class="form-label">E-mail</label><input type="email" class="form-control" id="email" name="email" placeholder="voce@email.com" required></div>
+                <div class="col-12"><label for="subject" class="form-label">Assunto</label><input type="text" class="form-control" id="subject" name="subject" placeholder="Sobre qual produto deseja saber?"></div>
+                <div class="col-12"><label for="message" class="form-label">Mensagem</label><textarea class="form-control" id="message" name="message" rows="4" placeholder="Escreva sua mensagem..." required></textarea></div>
+                <div class="col-12"><button class="btn btn-gold btn-lg" type="submit">Enviar mensagem</button><div id="formMessage" class="form-message mt-3" role="status" aria-live="polite"></div></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <a class="navbar-brand brand" href="#inicio">SABI <span>SPIRITS</span></a>
+      <p class="mb-0">© 2026 Sabi Spirits — Projeto demonstrativo.</p>
+      <p class="mb-0 responsible-footer">Beba com responsabilidade. Proibido para menores de 18 anos.</p>
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="interestToast" class="toast text-bg-dark border-0" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex"><div class="toast-body" id="toastText">Produto selecionado.</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
